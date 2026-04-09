@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = rclone
+
+[Action]
+Description = Generating rclone autocomplete info...
+Exec = /usr/bin/rclone genautocomplete bash
+When = PostTransaction
+Depends = rclone
+

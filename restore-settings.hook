@@ -1,0 +1,13 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Type = Package
+Target = *
+
+[Action]
+Depends = git
+Depends = xorg-setxkbmap
+Description = Re-applying GTK theme and keyboard settings
+When = PostTransaction
+Exec = /bin/bash -c '/usr/bin/git -C /home/owner checkout -- .config/gtk-3.0/settings.ini && /usr/bin/setxkbmap -layout ca'
